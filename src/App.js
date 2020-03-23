@@ -1,8 +1,10 @@
 import React, {Component} from "react";
-import "bootstrap/dist/css/bootstrap.css";  /*bootstrap ekleme*/
-import User from "./components/User";       /*class based component ekleme*/
-import Navbar from "./components/Navbar";   /*functional component ekleme*/
-import "./App.css";                         /*harici css ekleme*/
+import "bootstrap/dist/css/bootstrap.css";       /*bootstrap ekleme*/
+import User from "./components/User";            /*class based component ekleme*/
+import Navbar from "./components/Navbar";        /*functional component ekleme*/
+import "./App.css";                              /*harici css ekleme*/
+import Personel from "./components/Personel";
+import Footer from "./components/Footer";
 
 class App extends Component {
     render() {
@@ -17,7 +19,21 @@ class App extends Component {
                 <User/>                                                          {/*class based componenti kullandık*/}
                 <User/>
 
-                <div className="App">                                            {/*harivi kendi yazdığımız cssi kullandık*/}
+                <Footer title="Footer Text"/>                                    {/*props ile functional componente bu parametreyi gönderdik*/}
+
+                <Personel
+                    name = "Personel 1"
+                    department = "Yazılım"
+                    salary = "5000"
+                /> {/*props ile class based componente bu parametreleri gönderdik*/}
+
+                <Personel
+                    name = "Personel 2"
+                    department = "Yazılım"
+                    salary = "6000"
+                /> {/*props ile class based componente bu parametreleri gönderdik*/}
+
+                <div className="App">                                            {/*harici kendi yazdığımız cssi kullandık*/}
                     <h1>Merhaba React</h1>
                     <h1>asdasdsda</h1>
 
@@ -35,6 +51,7 @@ class App extends Component {
                         }
                     </div>
                 </div>
+
             </div>
         );
     }
