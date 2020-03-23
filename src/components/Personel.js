@@ -9,7 +9,7 @@ class Personel extends Component {
         return (
             <div>
                 <ul>
-                    <li>İsim : {name}</li>           {/*this.props kullanmadan bu parametreleri burada aldık*/}
+                    <li>İsim : {name}  <i className="fas fa-address-book"></i></li>           {/*this.props kullanmadan bu parametreleri burada aldık*/}
                     <li>Bölüm : {department}</li>
                     <li>Maaş : {salary}</li>
                 </ul>

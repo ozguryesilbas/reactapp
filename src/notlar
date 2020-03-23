@@ -24,3 +24,8 @@ aşağıdaki eklentiler chroma eklenir
 JetBrains IDE Support
 React Developer Tools
 Redux Dev Tools
+
+fontawesome kullanmak için aşağıdaki linki indez.html sayfasının head kısmına kopyala
+<script src="https://kit.fontawesome.com/62071065bf.js" crossorigin="anonymous"></script>
+örneğin aşağıdaki gibi classları classNmae yaparak ekle
+<i className="fas fa-address-book"></i>
