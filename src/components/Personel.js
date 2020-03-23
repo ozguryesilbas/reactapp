@@ -7,12 +7,17 @@ class Personel extends Component {
         const {name,department,salary} = this.props;
 
         return (
-            <div>
-                <ul>
-                    <li>İsim : {name}  <i className="fas fa-address-book"></i></li>           {/*this.props kullanmadan bu parametreleri burada aldık*/}
-                    <li>Bölüm : {department}</li>
-                    <li>Maaş : {salary}</li>
-                </ul>
+            <div className="col-md-8 mb-4">
+                <div className="card">
+                    <div className="card-header d-flex justify-content-between">
+                        <h4 className="d-inline">{name}</h4>
+                        <i className="fas fa-address-book" style={{cursor:"pointer"}}></i>
+                    </div>
+                    <div className="card-body">
+                        <p className="card-text">Bölüm : {department}</p>
+                        <p className="card-text">Maaş : {salary}</p>
+                    </div>
+                </div>
             </div>
         );
 
