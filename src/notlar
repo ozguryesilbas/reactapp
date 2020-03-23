@@ -1,0 +1,26 @@
+https://nodejs.org/en/#download
+nodejs indirilip kurulur
+
+react uygulamaları oluşturabilmek için yönetici olarak açılan cmdde çalıştır
+npm install -g create-react-app
+
+masaüstüne REACT TUTORIAL isminde bir klasör oluşturalım
+idea ile bu klasörü açalım
+
+terminal sekmesine basıp aşağıdaki komutu çalıştıralım
+create-react-app reactapp
+
+projeyi çalıştırmak için
+cd reactapp
+npm run start
+
+durdurmak için
+CTRL+C durudurur
+
+bootstrap eklemek için
+npm install --save bootstrap
+
+aşağıdaki eklentiler chroma eklenir
+JetBrains IDE Support
+React Developer Tools
+Redux Dev Tools
