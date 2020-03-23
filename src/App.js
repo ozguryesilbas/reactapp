@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";        /*functional component ekleme*/
 import "./App.css";                              /*harici css ekleme*/
 import Personel from "./components/Personel";
 import Footer from "./components/Footer";
+import Menubar from "./components/Menubar";
 
 class App extends Component {
     render() {
@@ -14,6 +15,9 @@ class App extends Component {
 
         return (
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
+
+                <Menubar title="asdad"/>
+
                 <h4 style={{color: "red", fontSize: "40px"}}>App Component</h4>  {/*inline css*/}
                 <Navbar/>                                                        {/*functional componenti kullandık*/}
                 <User/>                                                          {/*class based componenti kullandık*/}
