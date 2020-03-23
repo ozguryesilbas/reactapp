@@ -19,6 +19,11 @@ class Personel extends Component {
         }
     }
 
+    onClickEvent(event1){ //onClick ile çağırdığımız metod eventi yakalayacaktır, e veya e2 veya başka bir isim de verebilirdik
+        console.log(event1.target);
+        console.log("ASFDASD");
+    }
+
     render() {
 
         //javascript destructing özelliği ile this.props şeklinde uzun kullanımdan kurtulabiliriz
@@ -29,7 +34,7 @@ class Personel extends Component {
             <div className="col-md-8 mb-4">
                 <div className="card">
                     <div className="card-header d-flex justify-content-between">
-                        <h4 className="d-inline">{name}</h4>
+                        <h4 className="d-inline" onClick={this.onClickEvent}>{name}</h4>
                         <i className="fas fa-address-book" style={{cursor:"pointer"}}></i>
                     </div>
 
