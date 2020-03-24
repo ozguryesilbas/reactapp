@@ -40,6 +40,18 @@ class Personel extends Component {
         console.log(number);
     }
 
+    onClickEvent4 = (event1) => { //state değiştir
+        // bu kullanım hata verir, setState kullanmalıyız
+        /*  this.state = {
+            isVisible : true
+        } */
+        this.setState(
+            {
+                isVisible : !this.state.isVisible
+            }
+        )
+    }
+
     render() {
 
         //javascript destructing özelliği ile this.props şeklinde uzun kullanımdan kurtulabiliriz
@@ -53,6 +65,7 @@ class Personel extends Component {
                         <h4 className="d-inline" onClick={this.onClickEvent}>{name}</h4>
                         <p className="d-inline" onClick={this.onClickEvent2.bind(this)}>Admin</p>
                         <p className="d-inline" onClick={this.onClickEvent3.bind(this, 34)}>Değer Gönder</p>
+                        <p className="d-inline" onClick={this.onClickEvent4}>State Değiştir</p>
                         <i className="fas fa-address-book" style={{cursor:"pointer"}}></i>
                     </div>
 
