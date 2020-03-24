@@ -32,3 +32,6 @@ fontawesome kullanmak için aşağıdaki linki indez.html sayfasının head kıs
 
 redux eklemek için
 npm i react-redux redux --save
+
+react pose animasyonları eklemek için
+npm install react-pose --save
