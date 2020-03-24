@@ -29,3 +29,6 @@ fontawesome kullanmak için aşağıdaki linki indez.html sayfasının head kıs
 <script src="https://kit.fontawesome.com/62071065bf.js" crossorigin="anonymous"></script>
 örneğin aşağıdaki gibi classları classNmae yaparak ekle
 <i className="fas fa-address-book"></i>
+
+redux eklemek için
+npm i react-redux redux --save
