@@ -36,6 +36,10 @@ class Personel extends Component {
         console.log(this);
     }*/
 
+    onClickEvent3(number, event1){ //gönderilen değeri alma işlemi, değer önce yazılır
+        console.log(number);
+    }
+
     render() {
 
         //javascript destructing özelliği ile this.props şeklinde uzun kullanımdan kurtulabiliriz
@@ -48,6 +52,7 @@ class Personel extends Component {
                     <div className="card-header d-flex justify-content-between">
                         <h4 className="d-inline" onClick={this.onClickEvent}>{name}</h4>
                         <p className="d-inline" onClick={this.onClickEvent2.bind(this)}>Admin</p>
+                        <p className="d-inline" onClick={this.onClickEvent3.bind(this, 34)}>Değer Gönder</p>
                         <i className="fas fa-address-book" style={{cursor:"pointer"}}></i>
                     </div>
 
