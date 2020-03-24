@@ -17,12 +17,24 @@ class Personel extends Component {
             test : "Test",
             isVisible : true
         }
+        //bind etme işlemini consructorda da yapabiliriz
+        //this.onClickEvent = this.onClickEvent.bind(this);
     }
 
-    onClickEvent(event1){ //onClick ile çağırdığımız metod eventi yakalayacaktır, e veya e2 veya başka bir isim de verebilirdik
-        console.log(event1.target);
-        console.log("ASFDASD");
+    onClickEvent(event1){           //onClick ile çağırdığımız metod eventi yakalayacaktır, e veya e2 veya başka bir isim de verebilirdik
+        console.log(event1.target); // eventin nerede olduğu bilgisi
+        console.log("ASFDASD");     // undefined verir, javascript ve reactta burde this kullanımı için aşağıdaki gibi bind edilmeli
+        console.log(this);
     }
+
+    onClickEvent2(event1){
+        console.log(this);
+    }
+
+    //bind işleminin 3. yöntemi metodu arrow fnction olarak yazmaktır, arrow functionlarda bind işlemi otomatik olarak yapılır
+/*    onClickEvent2 = (event1) =>
+        console.log(this);
+    }*/
 
     render() {
 
@@ -35,6 +47,7 @@ class Personel extends Component {
                 <div className="card">
                     <div className="card-header d-flex justify-content-between">
                         <h4 className="d-inline" onClick={this.onClickEvent}>{name}</h4>
+                        <p className="d-inline" onClick={this.onClickEvent2.bind(this)}>Admin</p>
                         <i className="fas fa-address-book" style={{cursor:"pointer"}}></i>
                     </div>
 
