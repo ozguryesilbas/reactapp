@@ -3,11 +3,38 @@ import "bootstrap/dist/css/bootstrap.css";       /*bootstrap ekleme*/
 import User from "./components/User";            /*class based component ekleme*/
 import Navbar from "./components/Navbar";        /*functional component ekleme*/
 import "./App.css";                              /*harici css ekleme*/
-import Personel from "./components/Personel";
 import Footer from "./components/Footer";
 import Menubar from "./components/Menubar";
+import Personels from "./components/Personels";
 
 class App extends Component {
+
+    constructor (props){
+        super(props);
+        this.state = {
+            users : [
+                {
+                    id : 1,
+                    name : "Personel 1",
+                    salary : 5000,
+                    department : "Yazılım"
+                },
+                {
+                    id : 2,
+                    name : "Personel 2",
+                    salary : 4000,
+                    department : "Satış"
+                },
+                {
+                    id : 3,
+                    name : "Personel 3",
+                    salary : 3000,
+                    department : "Muhasebe"
+                }
+            ]
+        }
+    }
+
     render() {
 
         const x = "ali";
@@ -15,6 +42,20 @@ class App extends Component {
 
         return (
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
+
+                <Personels users = {this.state.users}/>
+
+                {/*  <Personel
+                 name = "Personel 1"
+                 department = "Yazılım"
+                 salary = "5000"
+                 /> props ile class based componente bu parametreleri gönderdik
+
+                 <Personel
+                 name = "Personel 2"
+                 department = "Yazılım"
+                 salary = "6000"
+                 /> props ile class based componente bu parametreleri gönderdik*/}
 
                 <Menubar title="asdad"/>
 
@@ -24,18 +65,6 @@ class App extends Component {
                 <User/>
 
                 <Footer title="Footer Text"/>                                    {/*props ile functional componente bu parametreyi gönderdik*/}
-
-                <Personel
-                    name = "Personel 1"
-                    department = "Yazılım"
-                    salary = "5000"
-                /> {/*props ile class based componente bu parametreleri gönderdik*/}
-
-                <Personel
-                    name = "Personel 2"
-                    department = "Yazılım"
-                    salary = "6000"
-                /> {/*props ile class based componente bu parametreleri gönderdik*/}
 
                 <div className="App">                                            {/*harici kendi yazdığımız cssi kullandık*/}
                     <h1>Merhaba React</h1>
