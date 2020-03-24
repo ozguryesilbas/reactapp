@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+var uniqid = require('uniqid'); //id üretme paketini import ettik
 
 class AddUser extends Component {
 
@@ -16,6 +17,19 @@ class AddUser extends Component {
         })
     }
 
+    addUser = (e) => {
+        e.preventDefault(); //submitin otomatik güncellemesini engelleyen javascript fonksiyonu
+        console.log("test");
+        const {name, salary, department} = this.state;
+        const newUser = {
+            id : uniqid(), // metodu kullanarak uniq id elde ettik
+            name : name,   // sadece name, de yazabilirdik, es6 ile geldi, iki taraf aynı olduğu yerlerde kullanabilriz
+            salary : salary,
+            department : department
+        }
+        console.log(newUser);
+    }
+
     render() {
         const {name, salary, department} = this.state;
 
@@ -26,7 +40,7 @@ class AddUser extends Component {
                         <h4>Add User Form</h4>
                     </div>
                     <div className="card-body">
-                        <form>
+                        <form onSubmit={this.addUser}>
                             <div className="form-group">
                                 <label htmlFor="name">Name</label>
                                 <input type="text"

@@ -35,3 +35,6 @@ npm i react-redux redux --save
 
 react pose animasyonları eklemek için
 npm install react-pose --save
+
+uniq id üreten bir kütüpane
+npm install uniqid
