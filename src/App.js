@@ -6,6 +6,7 @@ import "./App.css";                              /*harici css ekleme*/
 import Footer from "./components/Footer";
 import Menubar from "./components/Menubar";
 import Personels from "./components/Personels";
+import AddUser from "./components/AddUser";
 
 class App extends Component {
 
@@ -43,6 +44,7 @@ class App extends Component {
         return (
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
 
+                <AddUser/>
                 <Personels users = {this.state.users}/>
 
                 {/*  <Personel
