@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Menubar from "./components/Menubar";
 import Personels from "./components/Personels";
 import AddUser from "./components/AddUser";
+import Test from "./components/Test";
 
 class App extends Component {
 
@@ -44,6 +45,7 @@ class App extends Component {
         return (
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
 
+                <Test/>
                 <AddUser users = {this.state.users}/>
                 <Personels users = {this.state.users}/>
 
