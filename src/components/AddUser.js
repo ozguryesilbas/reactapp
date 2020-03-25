@@ -3,11 +3,16 @@ var uniqid = require('uniqid'); //id üretme paketini import ettik
 
 class AddUser extends Component {
 
-    state = {
-        name: "",
-        department: "",
-        salary: ""
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            name: "",
+            department: "",
+            salary: ""
+        }
     }
+
 
     /*içindeki değerlerin değişebilmesi için mutlaka onchange eveti olmalı*/
     changeInput = (e) => {
@@ -27,9 +32,7 @@ class AddUser extends Component {
             salary : salary,
             department : department
         }
-        console.log(newUser);
-        const {users} = this.props;
-        users.push(newUser);
+        this.props.addUser(newUser);
     }
 
     render() {

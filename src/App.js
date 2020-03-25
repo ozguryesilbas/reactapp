@@ -17,6 +17,8 @@ class App extends Component {
         this.state = {
             users : []
         }
+
+        this.addNewUser = this.addNewUser.bind(this);
     }
 
     //normalde aşağıdaki gibi kullanmıştık
@@ -35,6 +37,16 @@ class App extends Component {
         console.log(response);
         this.setState({
             users : response.data
+        });
+    }
+
+    addNewUser (newUser) {
+        let users = this.state.users;
+
+        users.push(newUser);
+
+        this.setState({
+            users
         })
     }
 
@@ -47,7 +59,7 @@ class App extends Component {
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
 
                 <Test/>
-                <AddUser users = {this.state.users}/>
+                <AddUser addUser={this.addNewUser}/>
                 <Personels users = {this.state.users}/>
 
                 {/*  <Personel

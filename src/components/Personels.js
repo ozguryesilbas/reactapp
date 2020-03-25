@@ -9,7 +9,7 @@ class Personels extends Component {
         return (
             <div>
                 {
-                    users.map(user => {
+                    users && users.map(user => {
                         console.log(user);
                         return (
                             <Personel
