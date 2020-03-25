@@ -8,33 +8,34 @@ import Menubar from "./components/Menubar";
 import Personels from "./components/Personels";
 import AddUser from "./components/AddUser";
 import Test from "./components/Test";
+import axios from "axios";
 
 class App extends Component {
 
     constructor (props){
         super(props);
         this.state = {
-            users : [
-                {
-                    id : 1,
-                    name : "Personel 1",
-                    salary : 5000,
-                    department : "Yazılım"
-                },
-                {
-                    id : 2,
-                    name : "Personel 2",
-                    salary : 4000,
-                    department : "Satış"
-                },
-                {
-                    id : 3,
-                    name : "Personel 3",
-                    salary : 3000,
-                    department : "Muhasebe"
-                }
-            ]
+            users : []
         }
+    }
+
+    //normalde aşağıdaki gibi kullanmıştık
+    /* componentDidMount(){
+
+    }*/
+
+    //ancak async ve await kullanacağız o yüzden arrowla yazdık
+    //async ve await es7 ile gelmiştir, promisleri yönetmemizi sağlıyor
+    //async yaparak awaiti kullanabileceğiz
+    //await cevap dönene kadar burda beklemesini sağlıyor
+    //awaiti async olmadan yazarsak hata verir çünkü await sadece async fonksiyonlarda çalışır
+    //axios bir probis döner
+    componentDidMount = async () => {
+        const response = await axios.get("http://localhost:3004/users");
+        console.log(response);
+        this.setState({
+            users : response.data
+        })
     }
 
     render() {

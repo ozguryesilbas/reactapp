@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Personel 1",
+      "salary": 5000,
+      "department": "Yazılım"
+    },
+    {
+      "id": 2,
+      "name": "Personel 2",
+      "salary": 4000,
+      "department": "Satış"
+    },
+    {
+      "id": 3,
+      "name": "Personel 3",
+      "salary": 3000,
+      "department": "Muhasebe"
+    }
+  ]
+}
+
+

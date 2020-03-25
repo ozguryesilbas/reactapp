@@ -38,3 +38,18 @@ npm install react-pose --save
 
 uniq id üreten bir kütüpane
 npm install uniqid
+
+json server kurulumu
+npm install -g json-server
+
+api klasörü altında db.json oluşturduk
+aşağıdaki komutlarla rest serverı olusturdu
+cd src
+json-server --watch api/db.json --port 3004
+aşağıdaki linki yazmış olmalı
+http://localhost:3004/users
+ctrl + click ile linke tıklayıp sonucu görebiliriz
+
+client olmak için core javascriptte bulunan fetch api'ı kullanabiliriz
+ancak daha kolay olmasından ötürü axios kütüphanesini kullanalım
+npm install axios
