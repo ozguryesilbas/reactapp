@@ -1,0 +1,44 @@
+view katmanıdır
+sanal dom kullanarak performans sağlar
+jsx ile javascript içinde html yazarız
+component yaklaşımı kullanılır
+componentin props ve stateti vardır, bunlar değiştirilerek aynı componentler kullanılır
+state güncellendiğinde virtual dom üzerinden değişiklik real doma yansır
+
+createreactapp paketi ile react için gerekli dosyaları sağlayacağız
+bunun için npm e ihtiyacımız var
+https://nodejs.org/en/#download
+adresten nodejs indrilir ve kurulur, pc reastart edilir
+cmd yönetici olarak açılır
+npm install -g create-react-app
+
+masaüstüne REACT TUTORIAL isminde bir klasör oluşturalım
+idea ile bu klasörü açalım
+terminal sekmesine basıp aşağıdaki komutu çalıştıralım
+create-react-app reactapp
+dosyalar geldi
+package.json ı inceleyelim, kullanılan kütüphanelerin versiyonları yazıyor, ayrıca aşağıdaki komutlar yazıyor
+"start": "react-scripts start",
+"build": "react-scripts build",
+"test": "react-scripts test",
+"eject": "react-scripts eject"
+komutları mevcut, build sunucuya deploy için, start ise başlatmak için
+
+aşağıdaki komutla reactapp isimli proje klasörüne gidilir
+cd reactapp
+aşağıdaki komutla proje başlatılır
+npm run start
+proje browserda otomatik açılır
+CTRL+C durudurur
+
+chromea aşağıdaki eklentileri ekleyelim
+JetBrains IDE Support
+React Developer Tools
+Redux Dev Tools
+
+jsx bir javascript extensionıdır
+
+state bir componentin o anki durumunu tutan ve değişik propertylerden olusan bir javascript objesidir
+state değiştiğinde sanal dom bunu algılar ve sadece sayfada stati değişen yer güncellenir
+stateleri propslar yardımıyla aktarabilriz
+2 türlü tanımlayabiliriz clasın hemen içinde veya constructorda
