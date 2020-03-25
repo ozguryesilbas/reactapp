@@ -48,6 +48,29 @@ class App extends Component {
         this.setState({
             users
         })
+
+        axios.post("https://jsonplaceholder.typicode.com/posts", {
+            title: "Test1",
+            body: "Test1"
+        }).then((response) => {
+            console.log(response);
+        }, (error) => {
+            console.log(error);
+        });
+
+       /* const options = {
+            headers: {'X-Custom-Header': 'value'}
+        };
+        axios.post('/save', { a: 10 }, options);*/
+
+        /*axios({
+            method: 'post',
+            url: '/login',
+            data: {
+                firstName: 'Finn',
+                lastName: 'Williams'
+            }
+        });*/
     }
 
     render() {
