@@ -28,6 +28,8 @@ class AddUser extends Component {
             department : department
         }
         console.log(newUser);
+        const {users} = this.props;
+        users.push(newUser);
     }
 
     render() {

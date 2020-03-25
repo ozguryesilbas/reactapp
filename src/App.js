@@ -44,7 +44,7 @@ class App extends Component {
         return (
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
 
-                <AddUser/>
+                <AddUser users = {this.state.users}/>
                 <Personels users = {this.state.users}/>
 
                 {/*  <Personel
