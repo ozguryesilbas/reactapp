@@ -10,11 +10,17 @@ import AddUser from "./components/AddUser";
 import Test from "./components/Test";
 import axios from "axios";
 
+import {connect} from 'react-redux';
+import {addReminder, deleteReminder} from './actions';
+import moment from 'moment';
+
 class App extends Component {
 
     constructor (props){
         super(props);
         this.state = {
+            text: '',
+            dueDate: '',
             users : []
         }
 
@@ -75,11 +81,30 @@ class App extends Component {
 
     render() {
 
+        console.log('ana js dosyasındaki props : ', this.props);
         const x = "ali";
         const isAuth = true;
 
         return (
             <div className="container">                                          {/*bootstrap cssinin gelip gelmediği bu şeklilde kontrol ettik*/}
+
+            <div className="container">
+                    <h5>Reminder App</h5>
+                    <hr/>
+                    <div className="form-inline">
+                        <input className="form-control"
+                               placeholder="Yapılacak iş ekle..."
+                               onChange={event => this.setState({text : event.target.value})}/>  {/*tek satırda metodu oluşturduk, eventi tanımladık, metodu bind ettik, metodu çağardık*/}
+                        <input className="form-control"
+                               type="datetime-local"
+                               onChange={event => this.setState({dueDate : event.target.value})}/>  {/*tek satırda metodu oluşturduk, eventi tanımladık, metodu bind ettik, metodu çağardık*/}
+                        <button type="button"
+                                onClick={() => this.addReminder()}
+                                className="btn btn-success mx-0">Ekle</button>
+                    </div>
+                    {this.renderReminders()} {/*direk metodu çağararak component elde ettik*/}
+                    <hr/>
+                </div>
 
                 <Test/>
                 <AddUser addUser={this.addNewUser}/>
@@ -128,6 +153,47 @@ class App extends Component {
             </div>
         );
     }
+
+    addReminder(){
+        this.props.addReminder(this.state.text, this.state.dueDate);
+    }
+
+    deleteReminder(id){
+        this.props.deleteReminder(id);
+    }
+
+    renderReminders(){
+        const {reminders} = this.props;
+
+        return (
+            <ul className="list-group">
+                {
+                    reminders.map(reminder => {
+                        return(
+                            <li key={reminder.id} className="list-group-item">
+                                <div className="list-item">{reminder.text} <br/>
+                                    <em>{moment(new Date(reminder.dueDate)).fromNow()}</em>
+                                </div>
+                                <div className="list-item btn btn-danger"
+                                     onClick={() => this.deleteReminder(reminder.id)}>
+                                    Sil
+                                </div>
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+        );
+    }
+
 }
 
-export default App;
+function mapStateToProps(state) {
+    console.log('map state fonksiyonundaki state: ', state);
+    return {
+        reminders : state
+    }
+}
+
+export default connect(mapStateToProps, {addReminder, deleteReminder})(App); //bağladık
+//export default App;

@@ -53,3 +53,6 @@ ctrl + click ile linke tıklayıp sonucu görebiliriz
 client olmak için core javascriptte bulunan fetch api'ı kullanabiliriz
 ancak daha kolay olmasından ötürü axios kütüphanesini kullanalım
 npm install axios
+
+moment paketi eklemek için
+npm install moment --save
