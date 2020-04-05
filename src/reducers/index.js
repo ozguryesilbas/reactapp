@@ -1,5 +1,6 @@
 import {ADD_REMINDER, DELETE_REMINDER} from '../constants';
 
+//reminders export edilen ve stroeda turulanan state değişkenimiz
 const reminders = (state = [], action) => {
     let reminders = null;
 

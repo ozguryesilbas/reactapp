@@ -39,11 +39,11 @@ class App extends Component {
     //awaiti async olmadan yazarsak hata verir çünkü await sadece async fonksiyonlarda çalışır
     //axios bir probis döner
     componentDidMount = async () => {
-        const response = await axios.get("http://localhost:3004/users");
+       /* const response = await axios.get("http://localhost:3004/users");
         console.log(response);
         this.setState({
             users : response.data
-        });
+        });*/
     }
 
     addNewUser (newUser) {
@@ -195,5 +195,7 @@ function mapStateToProps(state) {
     }
 }
 
-export default connect(mapStateToProps, {addReminder, deleteReminder})(App); //bağladık
+export default connect(mapStateToProps, {addReminder, deleteReminder})(App);
+//bağladık, yukarıda import ettiğimiz actionlardaki metodları burda bağladık
+//bu metodlar böylece propsun içinde bu js dosyasına geldi
 //export default App;
